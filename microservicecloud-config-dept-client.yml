@@ -4,9 +4,10 @@ spring:
      - dev
 
 ---
+server:
+  port: 8001
 spring:
-  profiles:
-    active: dev
+  profiles: dev
   application:
     name: microservicecloud-config-dept-client
   datasource:
@@ -20,8 +21,6 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-server:
-  port: 8001
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -44,9 +43,10 @@ info:
   build.artifactId: ${project.artifactId}$
   build.version: ${project.version}$
 ---
+server:
+  port: 8002
 spring:
-  profiles:
-    active: test
+  profiles: test
   application:
     name: microservicecloud-config-dept-client
   datasource:
@@ -60,8 +60,6 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-server:
-  port: 8002
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
